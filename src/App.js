@@ -5,7 +5,8 @@ class Selector extends Component {
   constructor(){
     super()
     this.state = {
-      selectedShape: 'square'
+      selectedShape: 'square',
+      count: 0
     }
 
   }
@@ -16,6 +17,12 @@ class Selector extends Component {
     })
   }
 
+  shapeCount = () => {
+    this.setState({
+      count: this.state.count + 1
+    })
+  }
+
   render() {
     return (
       <div className='container'>
@@ -23,11 +30,18 @@ class Selector extends Component {
           <div>Selected:
             <div>{this.state.selectedShape}</div>
           </div>
+          <Shape id='top-shape' shape={this.state.selectedShape}/>
         </div>
         <div className='shape-list'>
-        <Shape shape='square'selectShape={this.selectShape}/>
-        <Shape shape='circle'selectShape={this.selectShape}/>
-        <Shape shape='triangle'selectShape={this.selectShape}/>
+          <Shape shape='square'selectShape={this.selectShape}/>
+          <Shape shape='circle'selectShape={this.selectShape}/>
+          <Shape shape='triangle'selectShape={this.selectShape}/>
+          <Shape shape='trapezium'selectShape={this.selectShape}/>
+          <Shape shape='star'selectShape={this.selectShape}/>
+          <Shape shape='oval'selectShape={this.selectShape}/>
+        </div>
+        <div className='footer'>
+          <div>{this.state.count}</div>
         </div>
       </div>
     )
