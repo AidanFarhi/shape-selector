@@ -15,6 +15,7 @@ class Selector extends Component {
     this.setState({
       selectedShape: shapeName
     })
+    this.shapeCount()
   }
 
   shapeCount = () => {
