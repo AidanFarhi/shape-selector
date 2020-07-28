@@ -17,16 +17,9 @@ class Selector extends Component {
 
   selectShape = shapeName => {
     this.setState({
-      selectedShape: shapeName
+      selectedShape: shapeName,
     })
-    this.shapeCount()
-  }
-
-  shapeCount = () => {
-    this.setState({
-      
-    })
-
+    this.state[shapeName]++
   }
 
   render() {
@@ -50,15 +43,15 @@ class Selector extends Component {
           Triangle Clicks:
           <div>{this.state.triangle}</div>
           Square Clicks:
-          <div>{this.state.circle}</div>
+          <div>{this.state.square}</div>
           Star Clicks:
           <div>{this.state.star}</div>
           Trapezium Clicks:
-          <div>{this.state.oval}</div>
-          Oval Clicks:
-          <div>{this.state.square}</div>
-          Circle Clicks:
           <div>{this.state.trapezium}</div>
+          Oval Clicks:
+          <div>{this.state.oval}</div>
+          Circle Clicks:
+          <div>{this.state.circle}</div>
         </div>
       </div>
     )
