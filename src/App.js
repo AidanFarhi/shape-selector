@@ -17,6 +17,7 @@ class Selector extends Component {
 
   selectShape = shape => {
     this.setState({
+      selectedShape: shape,
       [shape]: this.state[shape] + 1
     })
   }
