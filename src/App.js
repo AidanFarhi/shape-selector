@@ -15,11 +15,10 @@ class Selector extends Component {
     }
   }
 
-  selectShape = shapeName => {
+  selectShape = shape => {
     this.setState({
-      selectedShape: shapeName,
+      [shape]: this.state[shape] + 1
     })
-    this.state[shapeName]++
   }
 
   render() {
